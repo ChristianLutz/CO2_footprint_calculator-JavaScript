@@ -6,12 +6,11 @@ const Recommend = require('../models/recommend.js');
 
 const ResultView = function (container) {
   this.container = container;
-  this.travel = null;
-  this.food = null;
-  this.lifestyle = null;
-  this.all = null;
+  this.travel = 50;
+  this.food = 75;
+  this.lifestyle = 25;
+  this.all = 0;
 };
-
 
 ResultView.prototype.bindEvents = function () {
  const menuItem = document.querySelector("#result-menu-item");
@@ -20,7 +19,6 @@ const detail = event.target.detail
  PubSub.publish('PublishView:final-result', detail)
  });
 };
-
 
 ResultView.prototype.findValues = function () {
 
@@ -122,7 +120,7 @@ Highcharts.setOptions(Highcharts.theme);
 
     },
     title: {
-        text: `Your CO2 Footprint!`
+        text: `${this.getTitle()}`,
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -160,5 +158,14 @@ Highcharts.setOptions(Highcharts.theme);
 this.container.innerHTML = "";
 const result = this.container.appendChild(myChart)
 }
+
+ResultView.prototype.getTitle = function () {
+  if (this.travel == 50 && this.food == 75 && this.lifestyle == 25){
+    return `Average Consumption`;
+  } else {
+    return `Your CO2 Consumption!`;
+  }
+  };
+
 
 module.exports = ResultView;

@@ -1,13 +1,13 @@
-const TravelForm = require("./views/form_views/create_form.js")
+const TravelForm = require("./views/form_views/travel_form_view.js")
 const TravelCalculator = require("./models/travel.js")
 const LifestyleView = require('./views/form_views/lifestyle_form_view.js');
 const LifestyleModel = require('./models/lifestyle.js');
-const FoodView = require('./views/form_views/food/food_form_view.js');
+const FoodView = require('./views/form_views/food_form_view.js');
 const FoodModel = require('./models/food.js');
 const ResultView = require('./views/result_view.js');
 const TotalCalculator = require('./models/total.js');
 const PubSub = require('./helpers/pub_sub.js');
-const TotalCalculatorPublish = require('./views/form_views/final_view.js')
+// const TotalCalculatorPublish = require('./views/form_views/final_view.js')
 const Highcharts = require('highcharts');
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const travelCalculator = new TravelCalculator();
   travelCalculator.bindEvents();
-
 
   const container = document.querySelector('#forms-window');
   const lifestyleForm = new LifestyleView(container);
@@ -43,5 +42,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const total = new TotalCalculator();
   total.bindEvents();
-  // newFormTravel.onLoad();
 });
