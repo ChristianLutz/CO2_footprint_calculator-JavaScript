@@ -25,7 +25,7 @@
   <li>add option to send results via email</li>
 </ul>
 
-<h2>Instructions to run the app</h2>
+<h2>Instructions</h2>
 <ul>In your Terminal:
   <li>type "npm install" to install dependencies</li>
   <li>type "npm start" and let it run in the background</li>
