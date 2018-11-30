@@ -32,6 +32,4 @@
   <li>open a new tab and type "npm run build", let it run in the background</li>
   <li>in a new tab, type "npm run server:dev" and let it run in the background</li>
 </ul>
-<ul>In your web browser:
-  <li>go to <a href="http://localhost:3000/">http://localhost:3000/</a></li>
-</ul>
+In your web browser, go to <a href="http://localhost:3000/">http://localhost:3000/</a>.
